@@ -1,3 +1,11 @@
+git-remote-bzr (0.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update Vcs-Git to use https URL.
+  * Update to Standards-Version 3.9.8, no changes needed.
+
+ -- Vagrant Cascadian <vagrant@debian.org>  Mon, 23 May 2016 19:36:10 -0700
+
 git-remote-bzr (0.2+20140705-2) unstable; urgency=medium
 
   * git-remote-bzr postinst: Remove obsolete alternatives no longer
