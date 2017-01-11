@@ -1,3 +1,17 @@
+git-remote-bzr (0.3+mnauw+git19~d54ed27-0utopia1) unstable; urgency=medium
+
+  * Utopia repository upload.
+  * Package a Git snapshot of Mark Nauwelaerts (mnauw)'s fork of git-remote-bzr.
+    This adds some previously unimplemented features, such as branch deletion,
+    dry-run pushing, and automatically creating non-existent branches on push.
+  * Update links in debian/watch, debian/copyright, etc.
+  * Add a get-orig-source rule for fetching a tarball for the current Git
+    snapshot.
+  * d/control: replace asciidoc build-dep with asciidoc-base for a smaller
+    installation.
+
+ -- James Lu <bitflip3@gmail.com>  Tue, 10 Jan 2017 17:37:54 -0800
+
 git-remote-bzr (0.3-1) unstable; urgency=medium
 
   * New upstream release.

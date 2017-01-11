@@ -1,9 +1,10 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: git-remote-bzr
-Source: https://github.com/felipec/git-remote-bzr
+Source: https://github.com/mnauw/git-remote-bzr
 
 Files: *
 Copyright: 2012-2014 Felipe Contreras
+           2016 Mark Nauwelaerts
 License: GPL-2.0+
 
 Files: test/sharness.sh

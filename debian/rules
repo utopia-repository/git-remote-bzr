@@ -11,3 +11,20 @@ override_dh_gencontrol:
 
 %:
 	dh $@ 
+
+# This get-orig-source rule creates a tarball given the Git URL and commit hash.
+# This looks at the "commithash" portion of the Debian package version, which is
+# in the format majorversion+gitXYZ~commithash-1.
+PACKAGE = $(shell dpkg-parsechangelog --show-field=Source)
+ORIG_VERSION = $(shell echo $(version) | cut -f 1 -d '-')
+COMMIT = $(shell echo $(ORIG_VERSION) | cut -f 2 -d '~')
+URL = https://github.com/mnauw/git-remote-bzr
+
+get-orig-source:
+	# Cloning upstream repository.
+	git clone $(URL) "$(PACKAGE)-$(ORIG_VERSION)"
+	# Generating archive from commit.
+	cd "$(PACKAGE)-$(ORIG_VERSION)" && git archive -v $(COMMIT) -o \
+	../$(PACKAGE)_$(ORIG_VERSION).orig.tar.gz
+	# Removing temporary Git tree.
+	rm -rf "$(PACKAGE)-$(ORIG_VERSION)"
